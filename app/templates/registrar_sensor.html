@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <title>Backend</title>
+    <link rel="stylesheet" href="/static/styles/register.css">
+  </head>
+  <body>
+    <div class="container-form">
+        <h1>Registrar Sensor</h1>
+        <div class="register-form" style="display: table-caption;">
+            <form action="{{ url_for('register') }}" method="post">
+                <input required minlength="4" name="nome" class="register-input" type="text" placeholder="Nome" />
+                
+                <input required minlength="4" name="senha" class="register-input" type="password" placeholder="Senha" />
+                
+                <input required name="topico" class="register-input" type="text" placeholder="Topico MQTT" />
+                
+                <select required name="tipo_sensor" class="register-input">
+                    <option value="" selected disabled hidden> Qual o tipo de sensor? </option>
+                    <option value="temperatura" class="register-input">
+                       Temperatura
+                    </option>
+                    <option value="umidade" class="register-input">
+                       Umidade
+                    </option>
+                    <option value="temp&umi" class="register-input">
+                        Temperatura&Umidade
+                    </option>
+                    <option value="ultrassonico" class="register-input">
+                        Ultrassônico
+                    </option>
+                </select>
+
+                <select required name="tipo_leitura" class="register-input">
+                    <option value="" selected disabled hidden> Qual o tipo de leitura? </option>
+                    <option value="double" class="register-input">
+                       double
+                    </option>
+                    <option value="int" class="register-input">
+                       int
+                    </option>
+                    <option value="boolean" class="register-input">
+                       boolean
+                    </option>
+                    <option value="texto" class="register-input">
+                       texto
+                    </option>
+                </select>
+                
+                <button class="register-btn" type="submit">
+                    Registrar
+                </button>
+                {% if status == True %}
+                <h1>Salvo com sucesso</h1>
+                {% endif %}
+                {% if status == False %}
+                <h1>Ocorreu um erro ao salvar</h1>
+                {% endif %}
+            </form>
+        </div>
+    </div>
+    </body>
+</html>
