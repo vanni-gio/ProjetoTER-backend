@@ -1,5 +1,5 @@
-from backend.app.database.querys import query_select_sensor, query_select_tipos_leitura, query_select_tipos_sensor
-from backend.app.database.db import cursor
+from app.database.querys import query_select_sensor, query_select_tipos_leitura, query_select_tipos_sensor
+from app.database.db import cursor
 
 class SelectDAO(object):
     def buscar_tipos_sensores(self):

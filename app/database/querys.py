@@ -15,7 +15,7 @@ def query_select_tipos_sensor():
 
 def query_select_tipos_leitura():
 	return f'''
-		SELECT * FROM tipos_leitura;
+		SELECT * FROM tipo_leitura;
 	'''
 
 def query_select_sensor(nome):

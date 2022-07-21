@@ -1,10 +1,10 @@
 from app import app
 from flask import jsonify, make_response, render_template, request, url_for
 from app.routes.decorators import token_required
-from backend.app.dao.SensorDAO import SensorDAO
-from backend.app.dao.SelectDAO import SelectDAO
-from backend.app.models.Sensor import Sensor
-from backend.criptografia import generate_keys
+from app.dao.SensorDAO import SensorDAO
+from app.dao.SelectDAO import SelectDAO
+from app.models.Sensor import Sensor
+from criptografia import generate_keys
 from werkzeug.security import generate_password_hash
 sensorDAO = SensorDAO()
 selectDAO = SelectDAO()

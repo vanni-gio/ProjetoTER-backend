@@ -1,0 +1,5 @@
+
+def inserir_sensor(pip install pysqlite3nome,chave_privada,chave_publica,id_tipo_leitura):
+    return f'''
+    INSERT INTO Sensor(mqttTopic, nomeSensor, chave, idTipoSensor) VALUES ({mqttTopic}, {nomeSensor}, {chave}, {idTipoSensor});
+    '''
