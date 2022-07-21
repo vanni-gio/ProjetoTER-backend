@@ -16,34 +16,24 @@
                 
                 <select required name="tipo_sensor" class="register-input">
                     <option value="" selected disabled hidden> Qual o tipo de sensor? </option>
-                    <option value="temperatura" class="register-input">
-                       Temperatura
-                    </option>
-                    <option value="umidade" class="register-input">
-                       Umidade
-                    </option>
-                    <option value="temp&umi" class="register-input">
-                        Temperatura&Umidade
-                    </option>
-                    <option value="ultrassonico" class="register-input">
-                        Ultrassônico
-                    </option>
+                    {% for row in tipos_sensor %}
+                    {% set id_tipo_sensor = row[0] %}
+                    {% set tipo_sensor = row[1] %}
+                    <option value="id_tipo_sensor" class="register-input">
+                        {{tipo_sensor}}
+                     </option>
+                    {% endfor %}
                 </select>
 
                 <select required name="tipo_leitura" class="register-input">
                     <option value="" selected disabled hidden> Qual o tipo de leitura? </option>
-                    <option value="double" class="register-input">
-                       double
-                    </option>
-                    <option value="int" class="register-input">
-                       int
-                    </option>
-                    <option value="boolean" class="register-input">
-                       boolean
-                    </option>
-                    <option value="texto" class="register-input">
-                       texto
-                    </option>
+                    {% for row in tipos_leitura %}
+                    {% set id_tipo_leitura = row[0] %}
+                    {% set tipo_leitura = row[1] %}
+                    <option value="{{id}}" class="register-input">
+                        {{tipo_leitura}}
+                     </option>
+                    {% endfor %}
                 </select>
                 
                 <button class="register-btn" type="submit">
