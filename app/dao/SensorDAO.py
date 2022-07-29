@@ -7,13 +7,20 @@ class SensorDAO:
 		pass
 
 	def salvar(self,sensor: Sensor):
-		cursor.execute(query_inserir_sensor(
-			nome=sensor.nome,
-			senha=sensor.senha,
-			chave_privada=sensor.chave_privada,
-			chave_publica=sensor.chave_publica,
-			id_tipo_leitura=sensor.id_tipo_leitura
-		))
+		print((sensor.nome,
+			sensor.senha,
+			sensor.topico_mqtt,
+			sensor.chave_privada,
+			sensor.chave_publica,
+			sensor.id_tipo_leitura))
+		cursor.execute(query_inserir_sensor(), 
+			(sensor.nome,
+			sensor.senha,
+			sensor.topico_mqtt,
+			sensor.chave_privada,
+			sensor.chave_publica,
+			sensor.id_tipo_leitura)
+		)
 		try:
 			conn.commit()
 		except Exception as e:

@@ -19,7 +19,7 @@
                     {% for row in tipos_sensor %}
                     {% set id_tipo_sensor = row[0] %}
                     {% set tipo_sensor = row[1] %}
-                    <option value="id_tipo_sensor" class="register-input">
+                    <option value="{{id_tipo_sensor}}" class="register-input">
                         {{tipo_sensor}}
                      </option>
                     {% endfor %}
@@ -30,7 +30,7 @@
                     {% for row in tipos_leitura %}
                     {% set id_tipo_leitura = row[0] %}
                     {% set tipo_leitura = row[1] %}
-                    <option value="{{id}}" class="register-input">
+                    <option value="{{id_tipo_leitura}}" class="register-input">
                         {{tipo_leitura}}
                      </option>
                     {% endfor %}
