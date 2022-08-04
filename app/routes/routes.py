@@ -25,10 +25,18 @@ def register():
         topico_mqtt=form_data.get('topico'),
         chave_privada=str(privkey.save_pkcs1()),
         chave_publica=str(pubkey.save_pkcs1()),
-        id_tipo_leitura=form_data.get('tipo_leitura')
+        id_tipo_sensor=form_data.get('tipo_sensor')
     )
-    sensorDAO.salvar(sensor)
+    sensorDAO.salvar(sensor, form_data.get('tipo_leitura'))
     return redirect(url_for('home'))
+
+@app.route('/dados', methods=['GET'])
+def dados():
+    return render_template('registrar_sensor.html',
+        tipos_sensor=selectDAO.buscar_tipos_sensores(),
+        tipos_leitura=selectDAO.buscar_tipos_leituras()
+    )
+    pass
 
 @app.route('/sensor', methods=['POST'])
 def sensor():
