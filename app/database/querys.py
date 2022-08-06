@@ -2,7 +2,7 @@
 def query_inserir_sensor():
 	return f'''
     		INSERT INTO sensor(nome,senha,
-			topico_mqtt,chave_privada,chave_publica,id_tipo_leitura) VALUES (?,?,?,?,?,?);
+			topico_mqtt,chave_privada,chave_publica,id_tipo_sensor) VALUES (?,?,?,?,?,?);
     	'''
 
 def inserir_leitura_has_sensor():
