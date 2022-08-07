@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title>Dados Descriptografados</title>
+    <link rel="stylesheet" href="/static/styles/dado.css">
+  </head>
+  <body>
+    <div class="list">
+      <ul>
+        {% for coluna in columns %}
+            <li>{{coluna}}</li>
+        {%endfor%}
+      </ul>
+        {% for dado in dados %}
+          {% for d in dados %}
+            {% for a in d%}
+            <ul>
+                {% for k in a.keys()%}
+                  <li data-label="{{k}}">{{a[k]}}</li>  
+                {%endfor%}
+            </ul>
+            {%endfor%}
+          {%endfor%}
+        {%endfor%}
+    </div>
+    </body>
+</html>

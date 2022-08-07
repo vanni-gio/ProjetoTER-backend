@@ -2,8 +2,27 @@
   <head>
     <title>Backend</title>
     <link rel="stylesheet" href="/static/styles/register.css">
+    <link rel="stylesheet" href="/static/styles/dado.css">
   </head>
   <body>
+    <header>
+        <div style="    display: flex;
+        font-size: 24;
+        padding: 1em;
+        ">
+            <div class="option">
+                <a href="{{url_for('dados')}}">
+                    Dados
+                </a>
+            </div>
+            <div class="option">
+                <a href="{{url_for('register')}}">
+                    Registrar
+                </a>
+            </div>
+        </div>
+
+    </header>
     <div class="container-form">
         <h1>Registrar Sensor</h1>
         <div class="register-form" style="display: table-caption;">

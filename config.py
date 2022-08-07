@@ -1,6 +1,6 @@
 import random
 import string
-
+import paho.mqtt.client as mqtt
 # from OpenSSL import SSL
 
 # context = SSL.Context(SSL.TLSv1_2_METHOD)
@@ -9,6 +9,7 @@ import string
 
 random_str = string.ascii_letters + string.digits + string.ascii_uppercase
 key=''.join(random.choice(random_str) for i in range(12))
+
 NUM_ROUNDS=12
 SECRET_KEY=key
 DEBUG=True
